@@ -1,0 +1,58 @@
+/* Universal Docs website: same look as the app (Poppins, navy, electric blue, arctic white; light and dark). Fonts are served from this site, nothing is loaded from other servers. */
+@font-face { font-family: 'Poppins'; src: url('fonts/Poppins-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('fonts/Poppins-Medium.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('fonts/Poppins-SemiBold.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('fonts/Poppins-Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+
+:root {
+  --bg: #F7F9FD; --surface: #FFFFFF; --line: #E5EAF2;
+  --text: #111B3C; --text-2: #64748B; --accent: #3478F6; --accent-soft: #EAF2FF;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0B1226; --surface: #131B35; --line: #243052; --text: #E8EDF8; --text-2: #9AA7C4; --accent: #6E95FF; --accent-soft: #1B2A52; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; }
+a { color: var(--accent); }
+.wrap { max-width: 46rem; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+.top { display: flex; align-items: center; gap: 12px; padding: 22px 0; }
+.top svg { width: 40px; height: 40px; flex: none; }
+.top .name { font-weight: 700; font-size: 1.25rem; letter-spacing: -.2px; text-decoration: none; color: var(--text); }
+
+/* Home */
+.hero { text-align: center; padding: 36px 0 12px; }
+.hero svg { width: 120px; height: 120px; }
+.hero h1 { margin: 18px 0 0; font-size: 2.3rem; line-height: 1.15; font-weight: 700; letter-spacing: -.5px; }
+.hero .tag { margin: 8px 0 0; color: var(--text-2); font-weight: 500; font-size: 1.05rem; }
+.hero .lead { margin: 22px auto 0; max-width: 34rem; }
+.pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 22px 0 0; padding: 0; list-style: none; }
+.pills li { padding: 6px 14px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-weight: 600; font-size: .9rem; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 40px 0 0; }
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } } /* 10 features: 5 rows of 2 on phones, 2 rows of 5 on computers */
+.card { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 18px 10px 16px; text-align: center; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
+.card img { width: 44px; height: 44px; }
+.card b { font-weight: 600; font-size: .95rem; }
+.card span { color: var(--text-2); font-size: .82rem; line-height: 1.35; }
+.privacy-box { margin: 36px 0 0; padding: 20px 22px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
+.privacy-box h2 { margin: 0 0 6px; font-size: 1.15rem; font-weight: 600; }
+.privacy-box p { margin: 0 0 10px; color: var(--text-2); }
+.btn { display: inline-block; padding: 10px 18px; border-radius: 12px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; }
+@media (prefers-color-scheme: dark) { .btn { color: #0B1020; } }
+
+/* Policy */
+.doc { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 28px 26px 30px; margin: 4px 0 0; }
+.doc h1 { font-size: 1.8rem; line-height: 1.2; margin: 0 0 .25rem; font-weight: 700; letter-spacing: -.3px; }
+.doc h2 { font-size: 1.15rem; margin: 2rem 0 .5rem; font-weight: 600; }
+.doc .date { color: var(--text-2); margin: 0 0 1.6rem; }
+.doc ul { padding-left: 1.25rem; }
+.doc li { margin: .35rem 0; }
+.doc strong { font-weight: 600; }
+.doc .contact { margin-top: 1.6rem; padding: 1rem 1.25rem; border-radius: 12px; background: var(--accent-soft); }
+.doc .contact p { margin: .2rem 0; }
+
+footer { color: var(--text-2); font-size: .88rem; text-align: center; padding: 36px 0 48px; }
+footer a { color: var(--text-2); }
+@media (max-width: 480px) { .hero h1 { font-size: 1.9rem; } .doc { padding: 22px 18px; } }
