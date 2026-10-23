@@ -15,7 +15,7 @@
   </header>
   <main class="doc">
 <h1>Privacy Policy: Universal Docs</h1>
-<p class="date">Last updated: 21 October 2026, app version 1.11.1</p>
+<p class="date">Last updated: 23 October 2026, app version 1.12.1</p>
 
 <p>Universal Docs is an Android app by <strong>Zarfsoft</strong> for reading and editing PDFs, documents, spreadsheets and
 presentations, filling and creating PDF forms, scanning documents and QR codes, recognising English text in scans,
@@ -24,8 +24,9 @@ This page explains what the app does with your information.</p>
 
 <h2>The short version</h2>
 <p><strong>Your documents never leave your phone.</strong> The app has no account, no sign-in, no advertising,
-no analytics and no tracking. It does not request the Internet permission, so it technically cannot send
-anything over the network.</p>
+no analytics and no tracking. The app does not request the Internet permission, so it cannot send your files
+or anything else over the network itself. Buying Universal Docs Pro and checking for app updates are handled by the
+Google Play Store app on your phone, as described under “Purchases and updates through Google Play”.</p>
 
 <h2>What the app stores on your device</h2>
 <ul>
@@ -43,6 +44,8 @@ anything over the network.</p>
   <li><strong>Unfinished scans</strong>: pages you scanned but did not finish are kept for 7 days so you can continue, then deleted.</li>
   <li><strong>Notes</strong>: notes you write are kept in the app’s private storage until you delete them.</li>
   <li><strong>Recordings</strong>: audio you record is kept in the app’s private storage until you delete it, and is never uploaded.</li>
+  <li><strong>Trial and Pro status</strong>: the date your 7-day trial started, whether this Google account owns Universal Docs Pro,
+      and the local price Google Play last showed, so the app knows which tools to unlock, even offline.</li>
 </ul>
 <p>All of this stays in the app’s private storage and is excluded from Android cloud backup and device transfer.
 Clearing the app’s data or uninstalling the app removes it. “Clear recent files” and “Delete saved signature and initials” are also
@@ -66,11 +69,25 @@ the rest of the app still works.</p>
 bundled inside the app. The page image and the recognised text are not sent anywhere. The recognised text is saved only
 in the file you choose to save or share.</p>
 
+<h2>Purchases and updates through Google Play</h2>
+<p>Universal Docs offers a 7-day trial of every feature, then an optional one-time purchase, Universal Docs Pro.
+The purchase is made and paid for entirely through Google Play. Google collects and processes your payment details under
+the <a href="https://payments.google.com/payments/apis-secure/get_legal_document?ldo=0&amp;ldt=privacynotice">Google Payments Privacy Notice</a>
+and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>; Universal Docs never sees your card or payment details.
+The app asks the Google Play Store app on your phone whether your Google account owns Universal Docs Pro, and Google Play tells it
+the price in your currency. This request goes from the app to the Play Store app on the same phone; the app itself sends nothing over the
+network. Zarfsoft receives the sale record that Google Play gives every developer (such as the order and the country), not your documents
+or anything else from the app. Refunds are handled by Google Play in the first 48 hours, and after that by writing to us.</p>
+<p>From version 1.12.1 the app can also ask Google Play whether a newer version is available and let Google Play download and install it.
+Nothing about your files is involved.</p>
+
 <h2>Files and permissions</h2>
 <p>The app reads only the files you choose, share to it, or find in folders you chose, through Android’s own pickers.
-It asks for no storage, contacts, location or network permission. It asks for the camera (scanning), the microphone (recording) and
+It asks for no storage, contacts or location permission, and does not request Internet access. It asks for the camera (scanning), the microphone (recording) and
 notifications (the recording notification), each only when you use that feature. It also declares Android's foreground service permission
-for the microphone, so a recording you started can continue in the background. When you save, the app writes only to the file or folder you select.</p>
+for the microphone, so a recording you started can continue in the background, Google Play's billing permission, so purchases can go
+through Google Play, and “view network connections” (added by Google Play's billing library), which only shows whether the phone is online
+and cannot send anything. When you save, the app writes only to the file or folder you select.</p>
 
 <h2>Editing and forms</h2>
 <p>Text changes, signatures, notes and form fields are written into a copy you save or share. The app never edits the
@@ -78,7 +95,9 @@ original unless you choose “Replace the original”. Please only edit document
 
 <h2>Data collection and sharing</h2>
 <p>Universal Docs collects <strong>no</strong> personal data and shares <strong>no</strong> data with anyone, including
-third parties. There are no third-party SDKs; the bundled open-source libraries run locally and have no network access.</p>
+third parties. The app contains no advertising, analytics or tracking SDKs. It includes Google Play's Billing Library and in-app update
+library, which only talk to the Google Play Store app on your phone to handle purchases and updates. The bundled open-source libraries
+run locally and have no network access.</p>
 
 <h2>How your information is protected and deleted</h2>
 <p>Everything listed above is kept in the app's private storage, which other apps cannot read, and is never sent off the phone.
