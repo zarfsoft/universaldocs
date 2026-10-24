@@ -15,7 +15,7 @@
   </header>
   <main class="doc">
 <h1>Privacy Policy: Universal Docs</h1>
-<p class="date">Last updated: 23 October 2026, app version 1.12.1</p>
+<p class="date">Last updated: 24 October 2026, app version 1.13.0</p>
 
 <p>Universal Docs is an Android app by <strong>Zarfsoft</strong> for reading and editing PDFs, documents, spreadsheets and
 presentations, filling and creating PDF forms, scanning documents and QR codes, recognising English text in scans,
@@ -44,6 +44,8 @@ Google Play Store app on your phone, as described under “Purchases and updates
   <li><strong>Unfinished scans</strong>: pages you scanned but did not finish are kept for 7 days so you can continue, then deleted.</li>
   <li><strong>Notes</strong>: notes you write are kept in the app’s private storage until you delete them.</li>
   <li><strong>Recordings</strong>: audio you record is kept in the app’s private storage until you delete it, and is never uploaded.</li>
+  <li><strong>Document list (only if you allow “Find all my documents”)</strong>: names, sizes, dates and locations of the supported
+      files found on your phone, so each section opens quickly. It is removed when you turn the access off, clear the app’s data or uninstall.</li>
   <li><strong>Trial and Pro status</strong>: the date your 7-day trial started, whether this Google account owns Universal Docs Pro,
       and the local price Google Play last showed, so the app knows which tools to unlock, even offline.</li>
 </ul>
@@ -82,8 +84,14 @@ or anything else from the app. Refunds are handled by Google Play in the first 4
 Nothing about your files is involved.</p>
 
 <h2>Files and permissions</h2>
-<p>The app reads only the files you choose, share to it, or find in folders you chose, through Android’s own pickers.
-It asks for no storage, contacts or location permission, and does not request Internet access. It asks for the camera (scanning), the microphone (recording) and
+<p>The app reads the files you choose, share to it, or find in folders you chose, through Android’s own pickers.
+<strong>Optional: Find all my documents.</strong> If you tap “Find all my documents” and allow it, Android gives the app
+“All files access” (on Android 10 and earlier, the storage permission). The app then looks through your phone’s storage for the file types
+it opens (such as PDF, Word, Excel, PowerPoint, e-books and archives) and lists them in its sections, and its file manager can rename, copy,
+move and delete files you choose. The list of files is kept only in the app’s private storage, to show your documents quickly; file contents
+and the list never leave your phone, because the app has no Internet access. You can turn this off at any time in Android settings, and the
+app keeps working with the files and folders you pick.
+It asks for no contacts or location permission, and does not request Internet access. It asks for the camera (scanning), the microphone (recording) and
 notifications (the recording notification), each only when you use that feature. It also declares Android's foreground service permission
 for the microphone, so a recording you started can continue in the background, Google Play's billing permission, so purchases can go
 through Google Play, and “view network connections” (added by Google Play's billing library), which only shows whether the phone is online
