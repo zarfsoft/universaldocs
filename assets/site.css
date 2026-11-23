@@ -1,58 +1,54 @@
-/* Universal Docs website: same look as the app (Poppins, navy, electric blue, arctic white; light and dark). Fonts are served from this site, nothing is loaded from other servers. */
+/* Universal Docs website: Privacy Policy and Terms pages. Same look as the home page (assets/home.css): the app's Light blue
+   theme, Poppins and the splash waves. Fonts are served from this site; nothing loads from other servers. */
 @font-face { font-family: 'Poppins'; src: url('fonts/Poppins-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
 @font-face { font-family: 'Poppins'; src: url('fonts/Poppins-Medium.woff2') format('woff2'); font-weight: 500; font-display: swap; }
 @font-face { font-family: 'Poppins'; src: url('fonts/Poppins-SemiBold.woff2') format('woff2'); font-weight: 600; font-display: swap; }
 @font-face { font-family: 'Poppins'; src: url('fonts/Poppins-Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
 
 :root {
-  --bg: #F7F9FD; --surface: #FFFFFF; --line: #E5EAF2;
-  --text: #111B3C; --text-2: #64748B; --accent: #3478F6; --accent-soft: #EAF2FF;
-  color-scheme: light dark;
-}
-@media (prefers-color-scheme: dark) {
-  :root { --bg: #0B1226; --surface: #131B35; --line: #243052; --text: #E8EDF8; --text-2: #9AA7C4; --accent: #6E95FF; --accent-soft: #1B2A52; }
+  --bg: #EAF4FF; --surface: #FFFFFF; --line: #D3E5F7; --text: #0E2A47; --text-2: #557089;
+  --accent: #1669BA; --accent-soft: #DDEEFF; --sp-glow: #DDEEFF;
+  --sp-w1a: #1E88E5; --sp-w1b: #4FC3F7; --sp-w2a: #81D4FA; --sp-w2b: #90CAF9;
+  --shadow: 0 1px 2px rgba(14, 42, 71, .05), 0 4px 16px rgba(30, 136, 229, .10);
+  color-scheme: light;
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; }
 a { color: var(--accent); }
-.wrap { max-width: 46rem; margin: 0 auto; padding: 0 20px; }
+.wrap { position: relative; z-index: 2; max-width: 46rem; margin: 0 auto; padding: 0 20px; }
+
+/* Splash background and waves (same shapes as the app's splash screen), drifting very slowly */
+.sky { position: absolute; left: 0; right: 0; top: 0; height: 340px; overflow: hidden; z-index: 0; background: linear-gradient(180deg, var(--bg) 0%, var(--sp-glow) 70%, var(--bg) 100%); pointer-events: none; }
+.waves { position: absolute; left: -8%; width: 116%; bottom: 0; height: 200px; }
+.foot-waves { position: relative; height: 150px; overflow: hidden; background: linear-gradient(180deg, var(--bg), var(--sp-glow)); }
+.foot-waves .waves { height: 150px; }
+.waves path { transform-box: fill-box; transform-origin: 50% 100%; }
+.w-back { animation: swayA 26s ease-in-out infinite alternate; }
+.w-front { animation: swayB 19s ease-in-out infinite alternate; }
+.w-fade { animation: swayC 32s ease-in-out infinite alternate; }
+@keyframes swayA { from { transform: translateX(-3%) scaleY(1); } to { transform: translateX(3%) scaleY(1.08); } }
+@keyframes swayB { from { transform: translateX(2.5%) scaleY(1.06); } to { transform: translateX(-2.5%) scaleY(.95); } }
+@keyframes swayC { from { transform: translateX(-1.5%); } to { transform: translateX(1.5%); } }
+@media (prefers-reduced-motion: reduce) { .waves path { animation: none; } }
+.sp-w1a { stop-color: var(--sp-w1a); } .sp-w1b { stop-color: var(--sp-w1b); } .sp-w2a { stop-color: var(--sp-w2a); } .sp-w2b { stop-color: var(--sp-w2b); } .sp-fade { stop-color: var(--bg); }
 
 /* Header */
-.top { display: flex; align-items: center; gap: 12px; padding: 22px 0; }
-.top svg { width: 40px; height: 40px; flex: none; }
-.top .name { font-weight: 700; font-size: 1.25rem; letter-spacing: -.2px; text-decoration: none; color: var(--text); }
-
-/* Home */
-.hero { text-align: center; padding: 36px 0 12px; }
-.hero svg { width: 120px; height: 120px; }
-.hero h1 { margin: 18px 0 0; font-size: 2.3rem; line-height: 1.15; font-weight: 700; letter-spacing: -.5px; }
-.hero .tag { margin: 8px 0 0; color: var(--text-2); font-weight: 500; font-size: 1.05rem; }
-.hero .lead { margin: 22px auto 0; max-width: 34rem; }
-.pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 22px 0 0; padding: 0; list-style: none; }
-.pills li { padding: 6px 14px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-weight: 600; font-size: .9rem; }
-.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 40px 0 0; }
-@media (min-width: 640px) { .grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } } /* 10 features: 5 rows of 2 on phones, 2 rows of 5 on computers */
-.card { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 18px 10px 16px; text-align: center; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
-.card img { width: 44px; height: 44px; }
-.card b { font-weight: 600; font-size: .95rem; }
-.card span { color: var(--text-2); font-size: .82rem; line-height: 1.35; }
-.privacy-box { margin: 36px 0 0; padding: 20px 22px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
-.privacy-box h2 { margin: 0 0 6px; font-size: 1.15rem; font-weight: 600; }
-.privacy-box p { margin: 0 0 10px; color: var(--text-2); }
-.btn { display: inline-block; padding: 10px 18px; border-radius: 12px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; }
-@media (prefers-color-scheme: dark) { .btn { color: #0B1020; } }
+.top { display: flex; align-items: center; gap: 10px; padding: 18px 0; }
+.top svg { width: 36px; height: 36px; flex: none; }
+.top .name { font-weight: 700; font-size: 1.15rem; letter-spacing: -.2px; text-decoration: none; color: var(--text); }
 
 /* Policy */
-.doc { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 28px 26px 30px; margin: 4px 0 0; }
-.doc h1 { font-size: 1.8rem; line-height: 1.2; margin: 0 0 .25rem; font-weight: 700; letter-spacing: -.3px; }
-.doc h2 { font-size: 1.15rem; margin: 2rem 0 .5rem; font-weight: 600; }
-.doc .date { color: var(--text-2); margin: 0 0 1.6rem; }
+.doc { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow); padding: 30px 28px 32px; margin: 40px 0 0; }
+.doc h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 .25rem; font-weight: 700; letter-spacing: -.4px; }
+.doc h2 { font-size: 1.15rem; margin: 2rem 0 .5rem; font-weight: 600; color: var(--accent); }
+.doc .date { display: inline-block; color: var(--accent); background: var(--accent-soft); font-weight: 600; font-size: .85rem; padding: 4px 12px; border-radius: 999px; margin: .4rem 0 1.6rem; }
 .doc ul { padding-left: 1.25rem; }
 .doc li { margin: .35rem 0; }
+.doc li::marker { color: var(--accent); }
 .doc strong { font-weight: 600; }
-.doc .contact { margin-top: 1.6rem; padding: 1rem 1.25rem; border-radius: 12px; background: var(--accent-soft); }
+.doc .contact { margin-top: 1.6rem; padding: 1rem 1.25rem; border-radius: 14px; background: var(--accent-soft); }
 .doc .contact p { margin: .2rem 0; }
 
-footer { color: var(--text-2); font-size: .88rem; text-align: center; padding: 36px 0 48px; }
-footer a { color: var(--text-2); }
-@media (max-width: 480px) { .hero h1 { font-size: 1.9rem; } .doc { padding: 22px 18px; } }
+footer { color: var(--text-2); font-size: .88rem; text-align: center; padding: 36px 0 20px; }
+footer a { color: var(--accent); margin: 0 8px; }
+@media (max-width: 480px) { .doc { padding: 22px 18px; margin-top: 24px; } .doc h1 { font-size: 1.55rem; } }
